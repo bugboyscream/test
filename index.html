@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <title>t e s t</title>
+        <link rel="icon" href="assets/favicon.png">
+        <meta name="description" content="Bugboy Scream's Wifi Wizard III">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+      <a-assets>
+            <img id="bbs" src="assets/bbs.png">
+            <sound id="intro" src=""></sound>
+            <a-asset-item id="cd" src="assets/cd.gltf"></a-asset-item>
+            <a-asset-item id="lips" src="assets/lips.gltf"></a-asset-item>
+      </a-assets>
+      <a-scene loading-screen="dotsColor: #FFF; backgroundColor: #000">
+            <a-link href="https://bugboyscream.bandcamp.com/"
+                    position="0 1.5 -5.1"
+                    link="visualAspectEnabled:false"
+                    >
+                    <a-plane scale="2.2 1.5 1" opacity="0"></a-plane>
+            </a-link>
+            <a-link href="https://open.spotify.com/artist/2xO1dkuWoN7kYFWGAMRjkA"
+                    position="-3 2 -5.9"
+                    link="visualAspectEnabled:false"
+                    >
+                    <a-plane scale="1.8 1.8 1" opacity="0"></a-plane>
+            </a-link>
+            <a-link href="https://www.instagram.com/bugboyscream/"
+                    position="3 2 -5.9"
+                    link="visualAspectEnabled:false"
+                    >
+                    <a-plane scale="1.8 1.8 1" opacity="0"></a-plane>
+            </a-link>
+            <a-image src="#bbs"
+                     position="0 2 15"
+                     rotation="0 180 0"
+                     scale="15 11 10">
+            </a-image>
+            <a-entity gltf-model="#cd"
+                      position="3 2 -6"
+                      rotation="0 -90 0"
+                      scale="1.3 1.3 1.3"
+                      animation="property: rotation;
+                                to: 360 -90 0;
+                                dur: 5000;
+                                easing: linear;
+                                loop: true">
+            </a-entity>
+            <a-entity gltf-model="#cd"
+                      position="-3 2 -6"
+                      rotation="0 -90 0"
+                      scale="1.3 1.3 1.3"
+                      animation="property: rotation;
+                                to: -360 -90 0;
+                                dur: 5000;
+                                easing: linear;
+                                loop: true">
+            </a-entity>
+            <a-entity gltf-model="#lips"
+                      position="0 1.5 -6"
+                      rotation="-40 0 0"
+                      scale="1.5 1.5 1.5"
+                      animation="property: rotation;
+                                to: -10 0 0;
+                                dur: 4000;
+                                dir: alternate;
+                                loop: true">
+            </a-entity>
+            <a-plane position="0 0 -7"
+                     rotation="-90 0 0"
+                     scale="10 5 1"
+                     color="#050505"
+            ></a-plane>
+            <a-sky color="#000"></a-sky>
+            <a-light position="3 6 -5"
+                     rotation="-75 0 0"
+                     type="spot"
+                     color="#FFF"
+                     intensity="0"
+                     angle="20"
+                     penumbra="1"
+                     animation="property: intensity;
+                               to: 10;
+                               easing: linear;
+                               dur: 5000;
+                               delay: 5000">
+            </a-light>
+            <a-light position="-3 6 -5"
+                     rotation="-75 0 0"
+                     type="spot"
+                     color="#FFF"
+                     intensity="0"
+                     angle="20"
+                     penumbra="1"
+                     animation="property: intensity;
+                               to: 10;
+                               easing: linear;
+                               dur: 5000;
+                               delay: 2000">
+            </a-light>
+            <a-light position="0 4 -3"
+                     rotation="-40 0 0"
+                     type="spot"
+                     color="#FFCCC"
+                     intensity="0"
+                     angle="25"
+                     penumbra="1"
+                     animation="property: intensity;
+                               to: 2;
+                               easing: linear;
+                               dur: 5000;
+                               delay: 8000">
+            </a-light>
+            </a-entity>
+            <a-camera wasd-controls-enabled="false">
+                  <a-cursor color="#FFF"></a-cursor>
+            </a-camera>
+      </a-scene>
+  </body>
+</html>
