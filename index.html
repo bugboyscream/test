@@ -11,12 +11,12 @@
   <body>
       <a-assets>
             <img id="bbs" src="assets/bbs.png">
-            <sound id="intro" src=""></sound>
+            <audio id="intro" src="assets/intro.mp3" preload="auto"></audio>
             <a-asset-item id="cd" src="assets/cd.gltf"></a-asset-item>
             <a-asset-item id="lips" src="assets/lips.gltf"></a-asset-item>
       </a-assets>
       <a-scene loading-screen="dotsColor: #FFF; backgroundColor: #000">
-            <a-link href="https://bugboyscream.bandcamp.com/"
+            <a-link href="https://www.instagram.com/bugboyscream/"
                     position="0 1.5 -5.1"
                     link="visualAspectEnabled:false"
                     >
@@ -28,7 +28,7 @@
                     >
                     <a-plane scale="1.8 1.8 1" opacity="0"></a-plane>
             </a-link>
-            <a-link href="https://www.instagram.com/bugboyscream/"
+            <a-link href="https://bugboyscream.bandcamp.com/"
                     position="3 2 -5.9"
                     link="visualAspectEnabled:false"
                     >
@@ -116,6 +116,7 @@
             </a-light>
             </a-entity>
             <a-camera wasd-controls-enabled="false">
+                  <a-sound autoplay="true" src="#intro"></a-sound>
                   <a-cursor color="#FFF"></a-cursor>
             </a-camera>
       </a-scene>
