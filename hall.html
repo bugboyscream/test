@@ -3,22 +3,29 @@
   <head>
         <meta charset="UTF-8">
         <title>WIFI WIZARD III</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Bugboy Scream's Wifi Wizard III">
+        <meta property="og:image" content="assets/bbs.png">
         <link rel="icon" href="assets/favicon.png">
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
       <a-assets>
           <a-asset-item id="hall" src="assets/hall.gltf"></a-asset-item>
+          <a-asset-item id="single" src="assets/single.gltf"></a-asset-item>
       </a-assets>
       <a-scene loading-screen="dotsColor: #FFF; backgroundColor: #000">
           <a-entity gltf-model="#hall"></a-entity>
+          <a-entity gltf-model="#single"
+                    position="0 1.5 -8"
+                    animation-mixer>
+          </a-entity>
+          <a-plane static-body></a-plane>
           <a-sky color="#000"></a-sky>
           <a-camera wasd-controls="acceleration: 200"
-                    position="0 1.6 0"
-                    rotation="0 0 0">
+                    position="0 1.6 0">
               <a-entity cursor="fuse: false"
                         position="0 0 -1"
                         geometry="primitive: circle; radius: 0.005"
