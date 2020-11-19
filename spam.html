@@ -12,12 +12,49 @@
 	</head>
 	<body>
 		<a-assets>
+			<audio id="spam" src="assets/spam-track.mp3" preload="auto"></audio>
 		</a-assets>
 		<a-scene loading-screen="dotsColor: #FFF; backgroundColor: #000" physics>
 			<a-plane rotation="-90 0 0"
-					 scale="50 50 50"
+					 scale="100 100 1"
+					 color="blue"
 					 static-body>
 			</a-plane>
+			<a-plane position="10 5 -20"
+					 rotation="-90 0 0"
+					 scale="15 15 1"
+					 side="double"
+					 color="yellow"
+					 static-body>
+			 </a-plane>
+			 <a-plane position="-10 10 -25"
+					 rotation="-90 0 0"
+					 scale="15 15 1"
+					 side="double"
+					 color="green"
+					 static-body>
+			 </a-plane>
+			 <a-plane position="-25 15 -10"
+					 rotation="-90 0 0"
+					 scale="15 15 1"
+					 side="double"
+					 color="red"
+					 static-body>
+			 </a-plane>
+			 <a-plane position="0 20 25"
+					 rotation="-90 0 0"
+					 scale="40 40 1"
+					 side="double"
+					 color="purple"
+					 static-body>
+			 </a-plane>
+			 <a-plane position="20 30 30"
+					 rotation="-90 0 0"
+					 scale="15 15 1"
+					 side="double"
+					 color="yellow"
+					 static-body>
+ 			</a-plane>
 			<a-link href="about:blank"
 					link="visualAspectEnabled:false"
 					position="5 2 0"
@@ -34,6 +71,10 @@
 					  movement-controls="fly: false">
 				<a-camera wasd-controls="acceleration: 200"
 						  look-controls="pointerLockEnabled: true">
+						  <a-sound autoplay="true"
+									 loop="true"
+									 src="#spam">
+						  </a-sound>
 					<a-entity cursor="fuse: false"
 							  position="0 0 -0.1"
 							  geometry="primitive: circle; radius: 0.0005; segments: 8"
