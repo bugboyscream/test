@@ -12,27 +12,111 @@
   </head>
   <body>
       <a-assets>
+          <img id="wasd" src="assets/wasd.png">
+          <img id="mobile" src="assets/mobile.png">
           <a-asset-item id="hall" src="assets/hall.gltf"></a-asset-item>
+          <a-asset-item id="cd" src="assets/cd-hall.gltf"></a-asset-item>
           <a-asset-item id="single" src="assets/single.gltf"></a-asset-item>
       </a-assets>
       <a-scene loading-screen="dotsColor: #FFF; backgroundColor: #000">
+          <a-plane position="0 0 30"
+                   rotation="-90 0 0"
+                   scale="5 20 1"
+                   roughness="1"
+                   color="#000">
+          </a-plane>
+          <a-plane position="0 2 21"
+                   scale="2.7 4.8 1"
+                   roughness="1"
+                   opacity="1"
+                   color="#000"
+                   animation="property: opacity;
+                             to: 0;
+                             dur: 3000;
+                             delay: 7000">
+          </a-plane>
+          <a-image src="#wasd"
+                   opacity="0.5"
+                   position="-3.8 2 30"
+                   scale="2.5 2 2.5">
+          </a-image>
+          <a-link href="hall2.html"
+                  position="3.8 2 30"
+                  link="visualAspectEnabled:false">
+                  <a-image src="#mobile"
+                           scale="1 1.5 1"
+                           opacity="0.5">
+                  </a-image>
+          </a-link>
           <a-entity gltf-model="#hall"></a-entity>
+          <a-entity gltf-model="#cd"
+                    position="0 8 0"
+                    scale="3 3 3"
+                    animation-mixer>
+          </a-entity>
           <a-entity gltf-model="#single"
                     position="0 1.5 -8"
                     animation-mixer>
           </a-entity>
-          <a-plane static-body></a-plane>
           <a-sky color="#000"></a-sky>
           <a-camera wasd-controls="acceleration: 200"
-                    look-controls="pointerLockEnabled: true">
+                    look-controls="pointerLockEnabled: true"
+                    position="0 1.6 35">
               <a-entity cursor="fuse: false"
                         position="0 0 -0.1"
                         geometry="primitive: circle; radius: 0.0005; segments: 8"
                         material="color: #FFF; shader: flat; opacity: 0.8">
               </a-entity>
           </a-camera>
+          <a-light position="0 6 35"
+                   rotation="-75 0 0"
+                   type="spot"
+                   color="#FFF"
+                   intensity="0"
+                   angle="20"
+                   penumbra="1"
+                   animation="property: intensity;
+                             to: 20;
+                             easing: linear;
+                             dur: 2000;
+                             delay: 2000">
+          </a-light>
+          <a-light position="0 6 30"
+                   rotation="-75 0 0"
+                   type="spot"
+                   color="#FFF"
+                   intensity="0"
+                   angle="20"
+                   penumbra="1"
+                   animation="property: intensity;
+                             to: 20;
+                             easing: linear;
+                             dur: 2000;
+                             delay: 4000">
+          </a-light>
+          <a-light position="0 6 25"
+                   rotation="-75 0 0"
+                   type="spot"
+                   color="#FFF"
+                   intensity="0"
+                   angle="20"
+                   penumbra="1"
+                   animation="property: intensity;
+                             to: 20;
+                             easing: linear;
+                             dur: 2000;
+                             delay: 6000">
+          </a-light>
+          <a-light type="point"
+                   position="0 5 0"
+                   intensity="0"
+                   animation="property: intensity;
+                             to: 0.5;
+                             easing: linear;
+                             dur: 5000;
+                             delay: 7000">
+          </a-light>
           <a-light type="ambient"></a-light>
-          <a-light type="point" position="0 3 0"></a-light>
       </a-scene>
   </body>
 </html>
